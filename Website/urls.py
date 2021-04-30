@@ -1,22 +1,22 @@
-"""Website URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from django.conf.urls import url
+from rest_framework.urlpatterns import format_suffix_patterns
+from Electricity_bill import views
 
 urlpatterns = [
+    path('', views.overview),
     path('admin/', admin.site.urls),
-    path('', include('Electricity_bill.urls')),
+    path('userlist/', views.userlist),
+    path('userdetail/<str:pk>/', views.userdetail),
+    path('newuser/', views.newuser),
+    path('newelec/', views.newelec),
+    path('eleclist/', views.eleclist),
+    path('updateelec/<str:pk>/', views.updateelec),
+    path('readlist/',views.readlist),
+    path('newread/', views.newread),
+    path('sublist/',views.sublist),
+    path('newsub/',views.newsub),
+    path('updatesub/',views.updatesub),
+    path('bill/',views.bill),
 ]

@@ -20,13 +20,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Electricity_bill.apps.ElectricityBillConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Electricity_bill',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
